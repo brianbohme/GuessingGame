@@ -37,7 +37,7 @@ Game.prototype.checkGuess = function() {
         return 'You Win!'
     }
     else {
-        if(this.pastGuesses.indexOf(this.playersGuess) &gt; -1) {
+        if(this.pastGuesses.indexOf(this.playersGuess) > -1) {
             return 'You have already guessed that number.';
         }
         else {
@@ -62,7 +62,7 @@ Game.prototype.checkGuess = function() {
             }
         }
     }
-};
+}
 
 Game.prototype.playersGuessSubmission = function(guess){
     if(guess < 1 || typeof guess !== 'number' || guess > 100){
@@ -100,19 +100,18 @@ $(document).ready(function() {
     })
 
     $('#hint').click(function() {
-    var hints = game.provideHint();
-    $('#title').text('The winning number is '+hints[0]+', '+hints[1]+', or '+hints[2]);
+        var hints = game.provideHint();
+        $('#title').text('The winning number is '+hints[0]+', '+hints[1]+', or '+hints[2]);
     })
 
     $('#reset').click(function() {
-    game = newGame();
-    $('#title').text('Play the Guessing Game!');
-    $('#subtitle').text('Guess a number between 1-100!')
-    $('.guess').text('-');
-    $('#hint, #submit').prop("disabled",false);
+        game = newGame();
+        $('#title').text('Play the Guessing Game!');
+        $('#subtitle').text('Guess a number between 1-100!')
+        $('.guess').text('-');
+        $('#hint, #submit').prop("disabled",false);
+
     })
-
-
 })
 
 
